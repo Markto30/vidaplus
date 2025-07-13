@@ -6,6 +6,35 @@ from PIL import Image                       # Manipulação de imagens
 import mysql.connector                      # Conexão com banco de dados MySQL
 import bcrypt                               # Criptografia de senhas
 
+"""
+Sistema de Gestão de Saúde - VidaPlus
+Desenvolvido por: Marcos Luís de Oliveira Silva
+RU: 4330689
+
+Descrição:
+Este sistema foi desenvolvido utilizando Python com a biblioteca CustomTkinter para a interface gráfica
+e MySQL para o banco de dados. Ele tem como objetivo gerenciar o acesso e as funções de três tipos de usuários:
+Administrador, Médico e Paciente.
+
+Funcionalidades principais:
+- Login com autenticação criptografada (bcrypt) e validação de hierarquia (Administrador, Médico ou Paciente).
+- Cadastro de novos usuários com controle de permissões.
+- Interface personalizada para cada tipo de usuário:
+  • Administrador: pode atualizar dados de médicos e pacientes.
+  • Médico: pode atualizar seu cadastro e visualizar agendamentos de pacientes.
+  • Paciente: pode atualizar seus dados e agendar consultas.
+- Agendamento de consultas vinculando paciente a médico, com data, hora e observações.
+- Consulta de agendamentos para o paciente logado.
+
+O sistema busca ser simples, funcional e com foco em segurança básica de dados e experiência do usuário.
+
+Requisitos:
+- Python 3.x
+- Biblioteca CustomTkinter
+- Biblioteca bcrypt
+- Banco de dados MySQL com as tabelas `usuarios` e `agendamentos` corretamente estruturadas.
+"""
+
 # ---------- Validação de login ----------
 def validar_login(usuario_digitado, senha_digitada, janela_login, hierarquia_esperada):
     try:
